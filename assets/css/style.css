@@ -38,6 +38,12 @@ header {
     color:var(--clr01);
 }
 
+.highscores a {
+    text-decoration: none;
+    color: var(--clr01);
+}
+
+
 .Timer {
     color: black;
 }
@@ -48,18 +54,22 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    width: 40%;
+    width: 50%;
     margin: auto;
-    margin-top: 6vw;
+    margin-top: 3vh;
+    /* border: 1px solid var(--clr01); */
 }
 
-.start {
-    border: 1px solid var(--clr01);
-    padding: 2rem 2rem 5rem 2rem;
-    display:flex;
+.start { 
+    padding: 2rem 2rem 2rem 2rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 4vh;
+}
+
+.start button {
+    display: block;
 }
 
 .start h2 {
@@ -67,13 +77,42 @@ header {
 }
 .start button {
     background-color: var(--clr01);
-        border: none;
-        color: white;
-        padding: 0.5rem 1.6rem;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1vw;
-        margin: 4vh 1vw;
-        cursor: pointer;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.6rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1rem 3rem;
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.question-container { 
+    padding: 2rem 2rem 2rem 2rem;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    line-height: 4vh;
+}
+
+.choices button {
+    background-color: var(--clr01);
+    border: none;
+    color: white;
+    padding: 0.5rem 5rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    margin: 1rem 3rem;
+    line-height: 1vh;
+    align-items: center;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.hidden {
+    display: none
 }

@@ -10,23 +10,30 @@
 <body>
     <header class='header'>
         <div class='highscores'>
-            <h4>View Highscores</h4>
+            <a href="./highscore.html" class="btn">View Highscores</a>
         </div>
         <div class='Timer'>
-            <h4>Time: xx  </h4>
+            Timer: 75
         </div> 
     </header>
     <main class='main'>
-        <div class='start'>
-            <h2>Coding Quiz Challange</h2>
-            <p>Try to answer the following coding related questions within the time 
-            limit. Keep in mind that incorrect answers will penaltize your score time 
-            by ten seconds.
-            </p>
-            <button>Start Quiz</button>
-        </div>
-
-
+            <div class='start' id='start'>
+                <h2>Coding Quiz Challange</h2>
+                <p>Try to answer the following coding related questions within the time 
+                limit. Keep in mind that incorrect answers will penaltize your score time 
+                by ten seconds.
+                </p>
+                <button id="startBtn">Start Quiz</button>
+            </div>
+            <div class='question-container' id='choice-question'> question
+                <div class= "choices"> 
+                    <button>answr</button>
+                    <button>answr</button>
+                    <button>answr</button>
+                    <button>answr</button>
+                </div>
+            </div>
+            <script src="script.js"></script>
     </main>
 </body>
 </html>
