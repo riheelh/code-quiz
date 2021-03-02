@@ -18,7 +18,7 @@ var questionSet = [
 ]
 
 var questionDisplay = document.getElementById('questContainer')
-var indexRiheel = 0
+var indexQuestion = 0
 var score = 0
 var startTime = 75;
 // Declare variables for Start Quiz Button
@@ -48,8 +48,8 @@ function startQuiz() {
 // Display question and answers
 function renderQuestion() {
     // load questions randomly in question div
-    var questionSelect = questionSet[indexRiheel].question
-    var choicesSelect = questionSet[indexRiheel].choices
+    var questionSelect = questionSet[indexQuestion].question
+    var choicesSelect = questionSet[indexQuestion].choices
     questionDisplay.textContent = questionSelect
         // console.log(answerSelect)
     
@@ -66,17 +66,17 @@ function renderQuestion() {
     })
     function verifyAnswer(e) {
         // validate right answer
-        console.log(indexRiheel)
+        console.log(indexQuestion)
         console.log(e.target.textContent)
-        if(e.target.textContent === questionSet[indexRiheel].answer){
+        if(e.target.textContent === questionSet[indexQuestion].answer){
                 console.log('pass');
                 
         } else {console.log('not pass'); 
            startTime -= 10;
         }
         
-        if (indexRiheel<3) {
-            indexRiheel++;
+        if (indexQuestion<3) {
+            indexQuestion++;
             renderQuestion();
         } else {
             
