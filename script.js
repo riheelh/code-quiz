@@ -18,8 +18,9 @@ var questionSet = [
 ]
 
 var questionDisplay = document.getElementById('questContainer')
-
-
+var indexRiheel = 0
+var score = 0
+var startTime = 75;
 // Declare variables for Start Quiz Button
 var startQuizBtn = document.getElementById('startBtn');
 
@@ -28,7 +29,7 @@ startQuizBtn.addEventListener('click', startQuiz);
 
 // Hide the start page on click and unhide the question container
 function startQuiz() {
-    var startTime = 75;
+    
     var countdown = setInterval(function() {
         // decrement startTime
         startTime--;
@@ -47,30 +48,45 @@ function startQuiz() {
 // Display question and answers
 function renderQuestion() {
     // load questions randomly in question div
-    for(var i=0; i<questionSet.length; i++) {
-        var questionSelect = questionSet[i].question
-        var choicesSelect = questionSet[i].choices
-        questionDisplay.textContent = questionSelect
-        
-    }
+    var questionSelect = questionSet[indexRiheel].question
+    var choicesSelect = questionSet[indexRiheel].choices
+    questionDisplay.textContent = questionSelect
+        // console.log(answerSelect)
+    
     // load choices associated with loaded question in choices div
     choicesSelect.forEach(function (item) {
         var newItem = document.createElement('button');
         newItem.innerHTML = item;
         questionDisplay.appendChild(newItem);
-        // Add click event listener callback the next question function
+        // Add attribute to new button elements
         newItem.setAttribute('id', 'answerBtn')
         // .addEventListener('click', nextQuestion);
-        // var buttons = document.getElementById('answerBtn');
-        newItem.addEventListener('click', nextQuestion);
-
+        newItem.addEventListener('click', (verifyAnswer)); 
+    
     })
- 
+    function verifyAnswer(e) {
+        // validate right answer
+        console.log(indexRiheel)
+        console.log(e.target.textContent)
+        if(e.target.textContent === questionSet[indexRiheel].answer){
+                console.log('pass');
+                
+        } else {console.log('not pass'); 
+           startTime -= 10;
+        }
+        
+        if (indexRiheel<3) {
+            indexRiheel++;
+            renderQuestion();
+        } else {
+            
+            console.log("Done all");
+            // Add end of game and swich to HighScore page
+        }
+
+    }
+    
 }
 
-function nextQuestion(e) {
-    //verify answer and incrment to next question
-    console.log(e.target)
-}
 
 
