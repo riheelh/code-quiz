@@ -60,6 +60,17 @@ header {
     /* border: 1px solid var(--clr01); */
 }
 
+.highscore-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 3vh;
+}
+
 .start { 
     padding: 2rem 2rem 2rem 2rem;
     display: flex;
@@ -113,3 +124,37 @@ header {
     border-radius: 0.5rem;
 }
 
+#inputForm{
+    display: none;
+    color: var(--clr01);
+    padding: 2rem 2rem 2rem 2rem;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputForm label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#inputForm input {
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    width: 13.5rem;
+    font-size: 1rem;
+}
+
+#inputForm button {
+    background-color: var(--clr01);
+    border: none;
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    margin: 1rem 3rem;
+    line-height: 1vh;
+    align-items: center;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
